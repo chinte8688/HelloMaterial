@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="bottom"
+    android:gravity="bottom">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="150dp"
+        android:text="Point Of Origin執行完畢\n\n可以看到ImageView從螢幕上方 移動放大 至下方\n\n請按[返回鍵]回上一頁"
+        android:gravity="center"/>
+
+    <ImageView
+        android:id="@+id/placeImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitCenter"
+        android:src="@drawable/android_l"
+        android:transitionName="tImage"
+        android:cropToPadding="false"
+        android:adjustViewBounds="true" />
+
+
+</LinearLayout>
