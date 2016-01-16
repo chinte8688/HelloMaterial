@@ -12,7 +12,7 @@
         android:layout_marginRight="20dp"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="150dp"
-        android:text="Point Of Origin執行完畢\n\n可以看到ImageView從螢幕上方 移動放大 至下方\n\n請按[返回鍵]回上一頁"
+        android:text="Point Of Origin執行完畢\n\n可以看到ImageView從列表左方 移動放大 至下方\n\n請按[返回鍵]回上一頁"
         android:gravity="center"/>
 
     <ImageView

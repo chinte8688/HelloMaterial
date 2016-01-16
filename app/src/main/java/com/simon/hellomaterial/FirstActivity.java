@@ -1,12 +1,10 @@
 package com.simon.hellomaterial;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.ActivityOptionsCompat;
-import android.support.v4.util.Pair;
-import android.view.View;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.widget.ImageView;
 
 /**
@@ -14,25 +12,202 @@ import android.widget.ImageView;
  */
 public class FirstActivity extends Activity {
     private ImageView placeImage;
+    private int[] imgSmall = {
+            R.drawable.android_s,
+            R.drawable.android_s,
+            R.drawable.android_s,
+            R.drawable.android_s,
+            R.drawable.android_s
+    };
+    // this is data fro recycler view
+    ItemData itemsData[] = {
+            new ItemData("Delete", imgSmall[0]),
+            new ItemData("Cloud", imgSmall[1]),
+            new ItemData("Favorite", imgSmall[2]),
+            new ItemData("Like", imgSmall[3]),
+            new ItemData("Rating", imgSmall[4]),
+            new ItemData("Delete", imgSmall[0]),
+            new ItemData("Cloud", imgSmall[1]),
+            new ItemData("Favorite", imgSmall[2]),
+            new ItemData("Like", imgSmall[3]),
+            new ItemData("Rating", imgSmall[4]),
+            new ItemData("Delete", imgSmall[0]),
+            new ItemData("Cloud", imgSmall[1]),
+            new ItemData("Favorite", imgSmall[2]),
+            new ItemData("Like", imgSmall[3]),
+            new ItemData("Rating", imgSmall[4]),
+            new ItemData("Delete", imgSmall[0]),
+            new ItemData("Cloud", imgSmall[1]),
+            new ItemData("Favorite", imgSmall[2]),
+            new ItemData("Like", imgSmall[3]),
+            new ItemData("Rating", imgSmall[4]),
+            new ItemData("Delete", imgSmall[0]),
+            new ItemData("Cloud", imgSmall[1]),
+            new ItemData("Favorite", imgSmall[2]),
+            new ItemData("Like", imgSmall[3]),
+            new ItemData("Rating", imgSmall[4]),
+            new ItemData("Delete", imgSmall[0]),
+            new ItemData("Cloud", imgSmall[1]),
+            new ItemData("Favorite", imgSmall[2]),
+            new ItemData("Like", imgSmall[3]),
+            new ItemData("Rating", imgSmall[4]),
+            new ItemData("Delete", imgSmall[0]),
+            new ItemData("Cloud", imgSmall[1]),
+            new ItemData("Favorite", imgSmall[2]),
+            new ItemData("Like", imgSmall[3]),
+            new ItemData("Rating", imgSmall[4]),
+            new ItemData("Delete", imgSmall[0]),
+            new ItemData("Cloud", imgSmall[1]),
+            new ItemData("Favorite", imgSmall[2]),
+            new ItemData("Like", imgSmall[3]),
+            new ItemData("Rating", imgSmall[4]),
+            new ItemData("Delete", imgSmall[0]),
+            new ItemData("Cloud", imgSmall[1]),
+            new ItemData("Favorite", imgSmall[2]),
+            new ItemData("Like", imgSmall[3]),
+            new ItemData("Rating", imgSmall[4]),
+            new ItemData("Delete", imgSmall[0]),
+            new ItemData("Cloud", imgSmall[1]),
+            new ItemData("Favorite", imgSmall[2]),
+            new ItemData("Like", imgSmall[3]),
+            new ItemData("Rating", imgSmall[4]),
+            new ItemData("Delete", imgSmall[0]),
+            new ItemData("Cloud", imgSmall[1]),
+            new ItemData("Favorite", imgSmall[2]),
+            new ItemData("Like", imgSmall[3]),
+            new ItemData("Rating", imgSmall[4]),
+            new ItemData("Delete", imgSmall[0]),
+            new ItemData("Cloud", imgSmall[1]),
+            new ItemData("Favorite", imgSmall[2]),
+            new ItemData("Like", imgSmall[3]),
+            new ItemData("Rating", imgSmall[4]),
+            new ItemData("Delete", imgSmall[0]),
+            new ItemData("Cloud", imgSmall[1]),
+            new ItemData("Favorite", imgSmall[2]),
+            new ItemData("Like", imgSmall[3]),
+            new ItemData("Rating", imgSmall[4]),
+            new ItemData("Delete", imgSmall[0]),
+            new ItemData("Cloud", imgSmall[1]),
+            new ItemData("Favorite", imgSmall[2]),
+            new ItemData("Like", imgSmall[3]),
+            new ItemData("Rating", imgSmall[4]),
+            new ItemData("Delete", imgSmall[0]),
+            new ItemData("Cloud", imgSmall[1]),
+            new ItemData("Favorite", imgSmall[2]),
+            new ItemData("Like", imgSmall[3]),
+            new ItemData("Rating", imgSmall[4]),
+            new ItemData("Delete", imgSmall[0]),
+            new ItemData("Cloud", imgSmall[1]),
+            new ItemData("Favorite", imgSmall[2]),
+            new ItemData("Like", imgSmall[3]),
+            new ItemData("Rating", imgSmall[4]),
+            new ItemData("Delete", imgSmall[0]),
+            new ItemData("Cloud", imgSmall[1]),
+            new ItemData("Favorite", imgSmall[2]),
+            new ItemData("Like", imgSmall[3]),
+            new ItemData("Rating", imgSmall[4]),
+            new ItemData("Delete", imgSmall[0]),
+            new ItemData("Cloud", imgSmall[1]),
+            new ItemData("Favorite", imgSmall[2]),
+            new ItemData("Like", imgSmall[3]),
+            new ItemData("Rating", imgSmall[4]),
+            new ItemData("Delete", imgSmall[0]),
+            new ItemData("Cloud", imgSmall[1]),
+            new ItemData("Favorite", imgSmall[2]),
+            new ItemData("Like", imgSmall[3]),
+            new ItemData("Rating", imgSmall[4]),
+            new ItemData("Delete", imgSmall[0]),
+            new ItemData("Cloud", imgSmall[1]),
+            new ItemData("Favorite", imgSmall[2]),
+            new ItemData("Like", imgSmall[3]),
+            new ItemData("Rating", imgSmall[4]),
+            new ItemData("Delete", imgSmall[0]),
+            new ItemData("Cloud", imgSmall[1]),
+            new ItemData("Favorite", imgSmall[2]),
+            new ItemData("Like", imgSmall[3]),
+            new ItemData("Rating", imgSmall[4]),
+            new ItemData("Delete", imgSmall[0]),
+            new ItemData("Cloud", imgSmall[1]),
+            new ItemData("Favorite", imgSmall[2]),
+            new ItemData("Like", imgSmall[3]),
+            new ItemData("Rating", imgSmall[4]),
+            new ItemData("Delete", imgSmall[0]),
+            new ItemData("Cloud", imgSmall[1]),
+            new ItemData("Favorite", imgSmall[2]),
+            new ItemData("Like", imgSmall[3]),
+            new ItemData("Rating", imgSmall[4]),
+            new ItemData("Delete", imgSmall[0]),
+            new ItemData("Cloud", imgSmall[1]),
+            new ItemData("Favorite", imgSmall[2]),
+            new ItemData("Like", imgSmall[3]),
+            new ItemData("Rating", imgSmall[4]),
+            new ItemData("Delete", imgSmall[0]),
+            new ItemData("Cloud", imgSmall[1]),
+            new ItemData("Favorite", imgSmall[2]),
+            new ItemData("Like", imgSmall[3]),
+            new ItemData("Rating", imgSmall[4]),
+            new ItemData("Delete", imgSmall[0]),
+            new ItemData("Cloud", imgSmall[1]),
+            new ItemData("Favorite", imgSmall[2]),
+            new ItemData("Like", imgSmall[3]),
+            new ItemData("Rating", imgSmall[4]),
+            new ItemData("Delete", imgSmall[0]),
+            new ItemData("Cloud", imgSmall[1]),
+            new ItemData("Favorite", imgSmall[2]),
+            new ItemData("Like", imgSmall[3]),
+            new ItemData("Rating", imgSmall[4]),
+            new ItemData("Delete", imgSmall[0]),
+            new ItemData("Cloud", imgSmall[1]),
+            new ItemData("Favorite", imgSmall[2]),
+            new ItemData("Like", imgSmall[3]),
+            new ItemData("Rating", imgSmall[4]),
+            new ItemData("Delete", imgSmall[0]),
+            new ItemData("Cloud", imgSmall[1]),
+            new ItemData("Favorite", imgSmall[2]),
+            new ItemData("Like", imgSmall[3]),
+            new ItemData("Rating", imgSmall[4]),
+            new ItemData("Delete", imgSmall[0]),
+            new ItemData("Cloud", imgSmall[1]),
+            new ItemData("Favorite", imgSmall[2]),
+            new ItemData("Like", imgSmall[3]),
+            new ItemData("Rating", imgSmall[4]),
+            new ItemData("Delete", imgSmall[0]),
+            new ItemData("Cloud", imgSmall[1]),
+            new ItemData("Favorite", imgSmall[2]),
+            new ItemData("Like", imgSmall[3]),
+            new ItemData("Rating", imgSmall[4]),
+            new ItemData("Delete", imgSmall[0]),
+            new ItemData("Cloud", imgSmall[1]),
+            new ItemData("Favorite", imgSmall[2]),
+            new ItemData("Like", imgSmall[3]),
+            new ItemData("Rating", imgSmall[4]),
+            new ItemData("Delete", imgSmall[0]),
+            new ItemData("Cloud", imgSmall[1]),
+            new ItemData("Favorite", imgSmall[2]),
+            new ItemData("Like", imgSmall[3]),
+            new ItemData("Rating", imgSmall[4]),
+            new ItemData("Delete", imgSmall[0]),
+            new ItemData("Cloud", imgSmall[1]),
+            new ItemData("Favorite", imgSmall[2]),
+            new ItemData("Like", imgSmall[3]),
+            new ItemData("Rating", imgSmall[4]),
+            new ItemData("Delete", imgSmall[0]),
+            new ItemData("Cloud", imgSmall[1]),
+            new ItemData("Favorite", imgSmall[2]),
+            new ItemData("Like", imgSmall[3]),
+            new ItemData("Rating", imgSmall[4])
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first);
 
-        placeImage = (ImageView) findViewById(R.id.placeImage);
-        placeImage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        MyAdapter mAdapter = new MyAdapter(this, itemsData);
+        recyclerView.setAdapter(mAdapter);
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
 
-                // 宣告一組元件配對，底下我們讓FirstActivity裡的ImageView和SecondActivity裡的ImageView作為一組配對
-                Pair<View, String> imagePair = Pair.create((View) placeImage, "tImage");
-
-                Intent transitionIntent = new Intent(FirstActivity.this, SecondActivity.class);
-                // 製作成 Material Design 需要的 ActivityOptionsCompat
-                ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation(FirstActivity.this, imagePair);
-                ActivityCompat.startActivity(FirstActivity.this, transitionIntent, options.toBundle());
-            }
-        });
     }
 }
