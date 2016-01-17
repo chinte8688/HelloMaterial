@@ -44,7 +44,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>{
         viewHolder.setOnItemClick(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // 宣告一組元件配對，底下我們讓FirstActivity裡的ImageView和SecondActivity裡的ImageView作為一組配對
+                // 宣告一組配對，底下我們讓FirstActivity裡[RecyclerView]->[ItemList]->[ImageView]和SecondActivity裡的ImageView作成一組配對
                 Pair<View, String> imagePair = Pair.create((View) viewHolder.imgViewIcon, "tImage");
 
                 Intent transitionIntent = new Intent( context, SecondActivity.class);
