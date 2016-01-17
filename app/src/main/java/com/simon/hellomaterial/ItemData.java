@@ -5,28 +5,23 @@ package com.simon.hellomaterial;
  */
 public class ItemData {
     private String title;
-    private int image;
+    private int imageSmall;
+    private int imageLarge;
 
-    public ItemData(String title, int res){
-
+    public ItemData(String title, int imgSmall, int imgLarge){
         this.title = title;
-        this.image = res;
-
+        this.imageSmall = imgSmall;
+        this.imageLarge = imgLarge;
     }
 
     public String getTitle() {
         return title;
     }
 
-    public int getImageResource() {
-        return image;
+    public int getImageLarge() {
+        return imageLarge;
     }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public void setImage(int image) {
-        this.image = image;
+    public int getImageSmall() {
+        return imageSmall;
     }
 }
